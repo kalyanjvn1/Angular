@@ -1,0 +1,21 @@
+<h2>
+  {{authors.length}} Authors
+</h2>
+<ul>
+  <li *ngFor="let author of authors">{{author}}</li>
+</ul>
+<div (click)="onDivClicked()">
+<input [(ngModel)]="email" (keyup.Enter)="onKeyUp()" />
+  <button class="btn btn-primary" [class.active]="isActive" (click)="logMessage($event)" >Save</button>
+</div>
+<div>
+  {{course.title | uppercase}} <br/>
+  {{course.students | number }}<br/>
+  {{course.rating | number: '1.1-1'}} <br/>
+  {{course.price | currency}} <br/>
+  {{course.releaseDate | date:'short'}}
+</div>
+
+
+
+<!-- <button [style.backgroundColor]="isActive ? 'blue' : 'red'"></button> -->
